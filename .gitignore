@@ -1,0 +1,6 @@
+private/
+proxyproviders/
+__pycache__/
+*.pem
+*.ppk
+*.key
