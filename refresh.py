@@ -32,6 +32,12 @@ def check_public():
         raise ValueError('节点提供器须保留为本地文件')
     if 'REJECT' not in next(g for g in clash['proxy-groups'] if g['name'] == 'DMIT固定出口')['proxies']:
         raise ValueError('须保留未初始化时的拒绝选项')
+    groups = {g['name']: g for g in clash['proxy-groups']}
+    for name in ('🤖 AI 服务', '📱 TikTok'):
+        if groups[name].get('type') != 'select' or groups[name].get('proxies') != ['DMIT固定出口']:
+            raise ValueError('固定出口策略被改变：' + name)
+    if groups['DMIT固定出口'].get('use') != ['DMIT私有节点']:
+        raise ValueError('固定出口不得引用机场提供器')
     for line in sr.splitlines():
         if line.startswith(('AI =', 'TikTok =')) and any(x in line for x in [',DIRECT,', ',PROXY,', ',美国节点,']):
             raise ValueError('固定出口组不得自动使用其他出口')
