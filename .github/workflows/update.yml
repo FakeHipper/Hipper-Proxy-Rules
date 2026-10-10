@@ -10,12 +10,14 @@ on:
       - Hipper.conf
       - Hipper.yaml
       - refresh.py
+      - test_refresh.py
       - .github/workflows/update.yml
   pull_request:
     paths:
       - Hipper.conf
       - Hipper.yaml
       - refresh.py
+      - test_refresh.py
       - .github/workflows/update.yml
 
 permissions:
@@ -38,6 +40,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install PyYAML==6.0.3
+      - run: python -B -m unittest -v test_refresh.py
       - run: python refresh.py
   publish:
     if: github.event_name != 'pull_request' && github.ref_name == 'main'
@@ -51,6 +54,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install PyYAML==6.0.3
+      - run: python -B -m unittest -v test_refresh.py
       - run: python refresh.py
       - name: 仅提交核验后的配置与摘要
         run: |
