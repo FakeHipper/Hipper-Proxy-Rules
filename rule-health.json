@@ -1,5 +1,5 @@
 {
-  "resource_digest": "44656de30baf9d61657b48437085773f6b09901adb3604238541cc61ac2e197d",
+  "resource_digest": "7f949260c551c9614130a74aafbf463c4b39438c8da1f59ac4a7a35c1de47d9f",
   "resources": {
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml": {
       "sha256": "af16ff9b3d5d587f93fa1761292401c8cc716fd52e7263f8ced577b90d7507c5",
@@ -12,7 +12,7 @@
       "entries": 33
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.yaml": {
-      "sha256": "ce38d0a13a59b6b9ecbe418b1138d419927a50e89d50a5925a38a27aca254fbd",
+      "sha256": "e2325f9fa613ffe1bd20778dfdcd158d88867b78016478a7a4368c89c2af7a10",
       "format": "yaml",
       "entries": 1560
     },
@@ -22,19 +22,19 @@
       "entries": 9
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml": {
-      "sha256": "a3a62095bb9ce82c990102a8663d3500aee0aa0cdbb8be38d665708132c55fc5",
+      "sha256": "fba16be0cee251a198b7b896f815e0558dfe559a27e613e68d00136767cc12e0",
       "format": "yaml",
       "entries": 62
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml": {
-      "sha256": "73d7d292443779a7b4613d58998136be37db8433d2c926a723dba20668c17ccc",
+      "sha256": "544921fdaaf8fd2232d2515d513b69f3f4720eef6e06ad9c1749f1d50bc575be",
       "format": "yaml",
-      "entries": 111522
+      "entries": 111893
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml": {
-      "sha256": "d40e03bf0e6deefdef6d893f7e29531947339232c995422d3657e1d7051567f5",
+      "sha256": "716f75c7e147e739d5a4b8063912864e5aa5b2d52f36d3f9b1d19713862caeb3",
       "format": "yaml",
-      "entries": 12513
+      "entries": 12526
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml": {
       "sha256": "ef21df39005b17dbd84aa65a47162b36fb5e72754cd32384146474ed488df482",
@@ -161,6 +161,11 @@
       "format": "text",
       "entries": 205
     },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Anthropic/Anthropic.list": {
+      "sha256": "ee68bf42bf5666943067127776e40643f6f52bdd911152b1be62b3ecb187dc8e",
+      "format": "text",
+      "entries": 3
+    },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list": {
       "sha256": "a96f78883f1659ba6966e45551cb031b86b40d24118677c66ad27e141ae4816e",
       "format": "text",
@@ -191,6 +196,11 @@
       "format": "text",
       "entries": 3689
     },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Claude/Claude.list": {
+      "sha256": "870e7e25d798e7f00338507f773b0eea4dfd15e25e9df0a27d5ae421ae1ab378",
+      "format": "text",
+      "entries": 3
+    },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Disney/Disney.list": {
       "sha256": "65ededc7b608e440f3d918f6e95b19ca52460c8fe368dbd9e840b4bc8669f753",
       "format": "text",
@@ -217,9 +227,14 @@
       "entries": 570
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list": {
-      "sha256": "57cf368850a979ff214a82ac78c859af2d0ab3d04f1dadfb5ed69cd1ced920fa",
+      "sha256": "53a5a348bd48d5878f843e32b129dace522c2fe99c1f4a9ab217d4d4d3dc724c",
       "format": "text",
       "entries": 597
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list": {
+      "sha256": "db8f69154426dca76792ab80b3ad6b0e2d078ebe0e52e76faec1724245a4ec49",
+      "format": "text",
+      "entries": 13
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GitHub/GitHub.list": {
       "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b",
@@ -227,14 +242,14 @@
       "entries": 31
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global.list": {
-      "sha256": "9550b87d8170568a0fac4f223365a495fae3482b0b16db3fa315ffc57f11d361",
+      "sha256": "e6a2a8d6e9dfeef858694f453be59b5987bd850c90b4ba495cfba9f863c8bf17",
       "format": "text",
       "entries": 201
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global_Domain.list": {
-      "sha256": "c77c19e0912d69daabe961b7d5df0c9e0f4166a93a018a288ce7a3bcedc181ce",
+      "sha256": "a63bb88d8a634eed55dd7b20143c051e7b3fdc50fc28f4689b8868bf9875266d",
       "format": "text",
-      "entries": 34939
+      "entries": 34942
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list": {
       "sha256": "c6efe08ab4c0a12ddba20f5e75abfba2dd63a42b810f8cb5c303433a38e93b73",
@@ -270,6 +285,11 @@
       "sha256": "ca3cf3ea5051ed220c255fbccbdd93e477f1c558e26ada6bf3dbcc2ba0487da2",
       "format": "text",
       "entries": 126
+    },
+    "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list": {
+      "sha256": "6f4047cdbf6953cf5d9b38c4ccd6da7bc6f1acb91b7a87134f25d5b8f5d2408b",
+      "format": "text",
+      "entries": 35
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/PayPal/PayPal.list": {
       "sha256": "4ffb6f94d2f1eff835c24b533c3d1d6e0c5a4cfbc32740fa9c32315ae218fd18",
@@ -342,9 +362,9 @@
       "entries": 52
     },
     "https://ruleset-mirror.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "9ff07aee590e7e20bad09716454123c068aa257d66b6753c21343301f4c42376",
+      "sha256": "7ca181ee68dcdf5dd9ed0bdd7123dd17fe2dcd3471305f0182db2b075c867eae",
       "format": "text",
-      "entries": 135954
+      "entries": 138422
     },
     "https://ruleset-mirror.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "110f1da29a6f37c10ea33598e5833a44192fa4aacbe3020d9b6cf882e5962a53",
