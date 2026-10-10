@@ -1,4 +1,4 @@
-# 上游规则核验摘要: 44656de30baf9d61657b48437085773f6b09901adb3604238541cc61ac2e197d
+# 上游规则核验摘要: 7f949260c551c9614130a74aafbf463c4b39438c8da1f59ac4a7a35c1de47d9f
 port: 3333
 external-controller: 127.0.0.1:9990
 socks-port: 23456
@@ -28,7 +28,7 @@ dns:
   - 119.29.29.29
   ipv6: false
   enhanced-mode: fake-ip
-  listen: :23453
+  listen: 127.0.0.1:23453
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
   - '*.lan'
@@ -83,103 +83,112 @@ dns:
   - https://1.12.12.12/dns-query
   nameserver-policy:
     +.openai.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.chatgpt.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.oaistatic.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.oaiusercontent.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.anthropic.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.claude.ai:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.claude.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
+    +.claude.app:
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
+    +.claudeusercontent.com:
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
+    +.claudemcpcontent.com:
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.x.ai:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.grok.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.perplexity.ai:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.pplx.ai:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.deepseek.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.mistral.ai:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.cohere.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.huggingface.co:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.google.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.googleapis.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.googlevideo.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.googleusercontent.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.gstatic.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.deepmind.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.youtube.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.github.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.githubusercontent.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.twitter.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.x.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.t.me:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.telegram.org:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
     +.cloudflare.com:
-    - https://8.8.8.8/dns-query
-    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query#DMIT固定出口
+    - https://1.1.1.1/dns-query#DMIT固定出口
 proxies: []
 proxy-providers:
   DMIT私有节点:
-    type: file
-    path: ./private/dmit.yaml
+    type: inline
+    payload: []
   PKCloud节点:
-    type: file
-    path: ./proxyproviders/pkcloud.yaml
+    type: inline
+    payload: []
   VVCloud节点:
-    type: file
-    path: ./proxyproviders/vvcloud.yaml
+    type: inline
+    payload: []
 proxy-groups:
 - name: DMIT固定出口
   type: select
@@ -187,6 +196,7 @@ proxy-groups:
   - REJECT
   use:
   - DMIT私有节点
+  empty-fallback: REJECT
 - name: 苹果服务
   type: select
   proxies:
@@ -219,6 +229,7 @@ proxy-groups:
   use:
   - PKCloud节点
   - VVCloud节点
+  empty-fallback: REJECT
 - name: ♻️ 自动选择
   type: select
   proxies:
@@ -315,10 +326,7 @@ proxy-groups:
 - name: 🐟 漏网之鱼
   type: select
   proxies:
-  - 🚀 节点选择
-  - 🚀 手动切换
-  - ♻️ 自动选择
-  - DIRECT
+  - DMIT固定出口
 - name: 🇭🇰 香港节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -328,6 +336,7 @@ proxy-groups:
   - PKCloud节点
   - VVCloud节点
   filter: (?i)(香港|HK|Hong.?Kong)
+  empty-fallback: REJECT
 - name: 🇯🇵 日本节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -337,6 +346,7 @@ proxy-groups:
   - PKCloud节点
   - VVCloud节点
   filter: (?i)(日本|JP|Japan)
+  empty-fallback: REJECT
 - name: 🇹🇼 台湾节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -346,6 +356,7 @@ proxy-groups:
   - PKCloud节点
   - VVCloud节点
   filter: (?i)(台湾|TW|Taiwan)
+  empty-fallback: REJECT
 - name: 🇸🇬 新加坡节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -355,6 +366,7 @@ proxy-groups:
   - PKCloud节点
   - VVCloud节点
   filter: (?i)(新加坡|SG|Singapore)
+  empty-fallback: REJECT
 - name: 🇰🇷 韩国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -364,6 +376,7 @@ proxy-groups:
   - PKCloud节点
   - VVCloud节点
   filter: (?i)(韩国|KR|Korea)
+  empty-fallback: REJECT
 - name: 🇺🇲 美国节点
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -375,14 +388,17 @@ proxy-groups:
   - PKCloud节点
   - VVCloud节点
   filter: (?i)(美国|US|United.?States)
+  empty-fallback: REJECT
 - name: 🟣 PKHub手动
   type: select
   use:
   - PKCloud节点
+  empty-fallback: REJECT
 - name: 🟢 VVCloud手动
   type: select
   use:
   - VVCloud节点
+  empty-fallback: REJECT
 rule-providers:
   AppleDomain:
     type: http
@@ -640,21 +656,15 @@ rule-providers:
     path: ./ruleset/proxyrules_ai.txt
     interval: 86400
     proxy: 🚀 节点选择
-  PrivateEndpoints:
-    type: file
-    behavior: ipcidr
-    format: yaml
-    path: ./private/endpoints.yaml
 rules:
-- RULE-SET,PrivateEndpoints,DIRECT,no-resolve
-- IP-CIDR,10.0.0.0/8,🇨🇳 中国大陆直连,no-resolve
-- IP-CIDR,172.16.0.0/12,🇨🇳 中国大陆直连,no-resolve
-- IP-CIDR,192.168.0.0/16,🇨🇳 中国大陆直连,no-resolve
-- IP-CIDR,127.0.0.0/8,🇨🇳 中国大陆直连,no-resolve
-- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+- DOMAIN-SUFFIX,claude.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,claude.com,🤖 AI 服务
+- DOMAIN-SUFFIX,anthropic.com,🤖 AI 服务
+- DOMAIN-SUFFIX,claude.app,🤖 AI 服务
+- DOMAIN-SUFFIX,claudeusercontent.com,🤖 AI 服务
+- DOMAIN-SUFFIX,claudemcpcontent.com,🤖 AI 服务
+- DOMAIN,challenges.cloudflare.com,🤖 AI 服务
 - RULE-SET,ProxyRulesAI,🤖 AI 服务
-- RULE-SET,RejectDomainset,🛑 广告拦截
-- RULE-SET,RejectNonIP,🛑 广告拦截
 - DOMAIN-SUFFIX,ipinfo.io,🤖 AI 服务
 - DOMAIN-SUFFIX,ipinfo.cv,🤖 AI 服务
 - DOMAIN-SUFFIX,ip-api.com,🤖 AI 服务
@@ -674,9 +684,6 @@ rules:
 - DOMAIN-SUFFIX,whoer.net,🤖 AI 服务
 - DOMAIN-SUFFIX,ippure.com,🤖 AI 服务
 - DOMAIN-SUFFIX,ip2location.com,🤖 AI 服务
-- DOMAIN-SUFFIX,claude.com,🤖 AI 服务
-- DOMAIN-SUFFIX,claude.ai,🤖 AI 服务
-- DOMAIN-SUFFIX,anthropic.com,🤖 AI 服务
 - DOMAIN-SUFFIX,openai.com,🤖 AI 服务
 - DOMAIN-SUFFIX,chatgpt.com,🤖 AI 服务
 - DOMAIN-SUFFIX,oaistatic.com,🤖 AI 服务
@@ -695,11 +702,7 @@ rules:
 - RULE-SET,Gemini,🤖 AI 服务
 - RULE-SET,Bing,🤖 AI 服务
 - RULE-SET,Copilot,🤖 AI 服务
-- DOMAIN-SUFFIX,x.ai,🤖 AI 服务
-- DOMAIN-SUFFIX,grok.com,🤖 AI 服务
 - DOMAIN,grok.x.ai,🤖 AI 服务
-- DOMAIN-SUFFIX,perplexity.ai,🤖 AI 服务
-- DOMAIN-SUFFIX,pplx.ai,🤖 AI 服务
 - DOMAIN-SUFFIX,cohere.com,🤖 AI 服务
 - DOMAIN-SUFFIX,mistral.ai,🤖 AI 服务
 - DOMAIN-SUFFIX,deepseek.com,🤖 AI 服务
@@ -709,14 +712,6 @@ rules:
 - DOMAIN-SUFFIX,midjourney.com,🤖 AI 服务
 - DOMAIN-SUFFIX,cursor.sh,🤖 AI 服务
 - DOMAIN-SUFFIX,cursor.com,🤖 AI 服务
-- RULE-SET,TikTok,📱 TikTok
-- DOMAIN-SUFFIX,musical.ly,📱 TikTok
-- DOMAIN-SUFFIX,tiktokcdn.com,📱 TikTok
-- DOMAIN-SUFFIX,tiktokv.com,📱 TikTok
-- DOMAIN-SUFFIX,tiktokcdn-us.com,📱 TikTok
-- RULE-SET,Apple,苹果服务
-- RULE-SET,AppleDomain,苹果服务
-- RULE-SET,Microsoft,微软服务
 - DOMAIN,notebooklm.google.com,🤖 AI 服务
 - DOMAIN,aistudio.google.com,🤖 AI 服务
 - DOMAIN,makersuite.google.com,🤖 AI 服务
@@ -728,6 +723,21 @@ rules:
 - DOMAIN,aiplatform.googleapis.com,🤖 AI 服务
 - DOMAIN,cloudfunctions.googleapis.com,🤖 AI 服务
 - DOMAIN,firebase.googleapis.com,🤖 AI 服务
+- IP-CIDR,10.0.0.0/8,🇨🇳 中国大陆直连,no-resolve
+- IP-CIDR,172.16.0.0/12,🇨🇳 中国大陆直连,no-resolve
+- IP-CIDR,192.168.0.0/16,🇨🇳 中国大陆直连,no-resolve
+- IP-CIDR,127.0.0.0/8,🇨🇳 中国大陆直连,no-resolve
+- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+- RULE-SET,RejectDomainset,🛑 广告拦截
+- RULE-SET,RejectNonIP,🛑 广告拦截
+- RULE-SET,TikTok,📱 TikTok
+- DOMAIN-SUFFIX,musical.ly,📱 TikTok
+- DOMAIN-SUFFIX,tiktokcdn.com,📱 TikTok
+- DOMAIN-SUFFIX,tiktokv.com,📱 TikTok
+- DOMAIN-SUFFIX,tiktokcdn-us.com,📱 TikTok
+- RULE-SET,Apple,苹果服务
+- RULE-SET,AppleDomain,苹果服务
+- RULE-SET,Microsoft,微软服务
 - RULE-SET,YouTube,🎬 海外流媒体
 - RULE-SET,Google,🌐 国际服务
 - RULE-SET,Netflix,🎬 海外流媒体
