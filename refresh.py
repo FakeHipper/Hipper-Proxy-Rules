@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import urllib.request
+import urllib.parse
 from pathlib import Path
 
 import yaml
@@ -15,11 +16,85 @@ import yaml
 ROOT = Path(__file__).resolve().parent
 FILES = ('Hipper.conf', 'Hipper.yaml')
 PUBLIC_URL = 'https://raw.githubusercontent.com/FakeHipper/Hipper-Proxy-Rules/main/Hipper.conf'
+CLAUDE_DOMAINS = ('claude.ai', 'claude.com', 'anthropic.com', 'claude.app', 'claudeusercontent.com', 'claudemcpcontent.com')
+SR_NODES = ('DMIT-LAX-CMIN2-VLESS', 'DMIT-LAX-CMIN2-HY2')
+
+
+def check_credentials(value):
+    forbidden = {'authentication', 'authorization', 'password', 'uuid', 'token', 'private-key', 'short-id', 'secret', 'username'}
+    if isinstance(value, dict):
+        for key, child in value.items():
+            if str(key).lower().replace('_', '-') in forbidden:
+                raise ValueError('公开配置出现认证字段：' + str(key))
+            check_credentials(child)
+    elif isinstance(value, list):
+        for child in value:
+            check_credentials(child)
+    elif isinstance(value, str):
+        for url in re.findall(r'(?=(https?://[^\s]+))', value):
+            parsed = urllib.parse.urlsplit(url)
+            if parsed.username or parsed.password or parsed.query:
+                raise ValueError('公开URL不得包含用户信息或查询参数')
+
+
+def sections(text):
+    result = {}
+    section = None
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line or line.startswith('#'):
+            continue
+        if line.startswith('[') and line.endswith(']'):
+            if line in result:
+                raise ValueError('配置段重复：' + line)
+            section = line
+            result[section] = []
+        elif section:
+            result[section].append(line)
+    return result
+
+
+def check_routing(sr, clash):
+    parsed = sections(sr)
+    if parsed.get('[Proxy]'):
+        raise ValueError('公开Shadowrocket不得定义节点')
+    rules = parsed['[Rule]']
+    expected_sr = ['DOMAIN-SUFFIX,' + host + ',AI' for host in CLAUDE_DOMAINS]
+    expected_clash = ['DOMAIN-SUFFIX,' + host + ',🤖 AI 服务' for host in CLAUDE_DOMAINS]
+    if rules[:6] != expected_sr or clash['rules'][:6] != expected_clash:
+        raise ValueError('Claude本地规则须完整且先于远程、广告和IP规则')
+    general = dict(line.split(' = ', 1) for line in parsed['[General]'] if ' = ' in line)
+    if general.get('dns-fallback-system') != 'false':
+        raise ValueError('不得使用系统DNS回退')
+    for key in ('dns-server', 'fallback-dns-server'):
+        if not general.get(key) or any(
+            not url.startswith('https://') or url.rsplit('#proxy=', 1)[-1] not in SR_NODES
+            for url in general[key].split(',')
+        ):
+            raise ValueError('Shadowrocket DNS须明确绑定本地DMIT节点')
+    ai = next(line for line in parsed['[Proxy Group]'] if line.startswith('AI ='))
+    candidates = [value for value in ai.split('=', 1)[1].strip().split(',')[1:] if '=' not in value]
+    if set(candidates) != set(SR_NODES) | {'REJECT'}:
+        raise ValueError('Shadowrocket AI组须只引用DMIT节点和拒绝策略')
+    if rules[-1] != 'FINAL,AI':
+        raise ValueError('未分类流量须保留固定出口兜底')
+    groups = {g['name']: g for g in clash['proxy-groups']}
+    if clash['rules'][-1] != 'MATCH,🐟 漏网之鱼' or groups['🐟 漏网之鱼'].get('proxies') != ['DMIT固定出口']:
+        raise ValueError('Clash未分类流量不得直连回退或更换出口')
+    if any(g.get('use') and g.get('empty-fallback') != 'REJECT' for g in groups.values()):
+        raise ValueError('空节点组须拒绝连接，不得使用COMPATIBLE直连')
+    for host in CLAUDE_DOMAINS:
+        resolvers = clash['dns']['nameserver-policy'].get('+.' + host, [])
+        if not resolvers or any(not url.startswith('https://') or not url.endswith('#DMIT固定出口') for url in resolvers):
+            raise ValueError('Claude DNS须绑定固定出口：' + host)
 
 
 def check_public():
     sr = (ROOT / FILES[0]).read_text()
     clash = yaml.safe_load((ROOT / FILES[1]).read_text())
+    check_credentials(sr)
+    check_credentials(clash)
+    check_routing(sr, clash)
     if '[MITM]' in sr or '[Script]' in sr:
         raise ValueError('公开配置不得增加解密或脚本段')
     if 'update-url = ' + PUBLIC_URL not in sr:
@@ -28,16 +103,15 @@ def check_public():
         raise ValueError('公开Clash不得包含节点凭据或控制密钥')
     if clash.get('external-controller') != '127.0.0.1:9990':
         raise ValueError('控制接口须限制到本机')
-    if any(p.get('type') != 'file' for p in clash['proxy-providers'].values()):
-        raise ValueError('节点提供器须保留为本地文件')
-    if 'REJECT' not in next(g for g in clash['proxy-groups'] if g['name'] == 'DMIT固定出口')['proxies']:
-        raise ValueError('须保留未初始化时的拒绝选项')
+    if any(p != {'type': 'inline', 'payload': []} for p in clash['proxy-providers'].values()):
+        raise ValueError('公开节点提供器只能包含空占位，实际节点须保留本地覆写')
     groups = {g['name']: g for g in clash['proxy-groups']}
-    for name in ('🤖 AI 服务', '📱 TikTok'):
-        if groups[name].get('type') != 'select' or groups[name].get('proxies') != ['DMIT固定出口']:
+    fixed = {'name': 'DMIT固定出口', 'type': 'select', 'proxies': ['REJECT'], 'use': ['DMIT私有节点'], 'empty-fallback': 'REJECT'}
+    if groups['DMIT固定出口'] != fixed:
+        raise ValueError('固定出口不得增加直连、机场或动态引入节点')
+    for name in ('🤖 AI 服务', '📱 TikTok', '🐟 漏网之鱼'):
+        if groups[name] != {'name': name, 'type': 'select', 'proxies': ['DMIT固定出口']}:
             raise ValueError('固定出口策略被改变：' + name)
-    if groups['DMIT固定出口'].get('use') != ['DMIT私有节点']:
-        raise ValueError('固定出口不得引用机场提供器')
     for line in sr.splitlines():
         if line.startswith(('AI =', 'TikTok =')) and any(x in line for x in [',DIRECT,', ',PROXY,', ',美国节点,']):
             raise ValueError('固定出口组不得自动使用其他出口')
