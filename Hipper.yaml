@@ -1,4 +1,4 @@
-# 上游规则核验摘要: ec7ff4ef6be59a9b13b539a5b717e92d25d59d9b5b8f3292319a3dbd7bac5d69
+# 上游规则核验摘要: 4b0ec6bf8eab309c9426a213d919d71ad6676f5da5efe493c6ed11017d77b62b
 port: 3333
 external-controller: 127.0.0.1:9990
 socks-port: 23456
