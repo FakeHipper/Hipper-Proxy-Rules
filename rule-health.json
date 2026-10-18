@@ -1,5 +1,5 @@
 {
-  "resource_digest": "373bad8c009628e0800928587e170f51ac2336573bbdbfe8b6077f9ae8449d68",
+  "resource_digest": "6b3b37122c210b3caeb7dbdc4e45d26c5ed3df768ec5c5fd9acb372f850b0862",
   "resources": {
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml": {
       "sha256": "af16ff9b3d5d587f93fa1761292401c8cc716fd52e7263f8ced577b90d7507c5",
@@ -12,7 +12,7 @@
       "entries": 33
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.yaml": {
-      "sha256": "394b7d28a7223f213abb97c553f756f5cec6b2f5925ad6f8fb8a774ad535ab64",
+      "sha256": "daa8877d68659d5c9a0ccc149bb19dee274104ddc6aa574fba0ec3084110cb2c",
       "format": "yaml",
       "entries": 1560
     },
@@ -22,19 +22,19 @@
       "entries": 9
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml": {
-      "sha256": "10ebe8d7abf345964c84debafd12bebc062073f4e22fcedf18a25a335894fdaa",
+      "sha256": "a527d57b2061ea2066004b38acec4d7ea27accadc1e911b18570c6998c63f9b4",
       "format": "yaml",
       "entries": 62
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml": {
-      "sha256": "a1982005064129f46b969984f53db753315374a8450535c080269151fc8fb715",
+      "sha256": "64128d2858cb98134c92021892525f72dc46dd50103e4a3e275daadb523c5b54",
       "format": "yaml",
-      "entries": 110833
+      "entries": 110746
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml": {
-      "sha256": "4c8b6dd8e3e6ad47bc1c379151d376e25db8911c5a2b1354a7e936d4ea46288b",
+      "sha256": "75d230c454b1a9fc4885bec8267cc6d7df85a72b7d0743949ea5dc47f5d6f52c",
       "format": "yaml",
-      "entries": 12560
+      "entries": 12558
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml": {
       "sha256": "ef21df39005b17dbd84aa65a47162b36fb5e72754cd32384146474ed488df482",
@@ -227,7 +227,7 @@
       "entries": 570
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list": {
-      "sha256": "ae8b957942e25c420f29f750e22dfa47169709a68c560a75def6cc36257e6ada",
+      "sha256": "70455f9b653c0bc2cd62745b0c52b877f7807c1b27364a72edcc07a2cbf0b405",
       "format": "text",
       "entries": 597
     },
@@ -242,14 +242,14 @@
       "entries": 31
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global.list": {
-      "sha256": "7dcd5e49e9a1c2d183a5a3044c72030b1c7dc35191b3d38d899f1271bd3304e5",
+      "sha256": "4b40196fddbe4aeb726991d6c6e13d57bc4c524b949279950011df0a5e2da1ce",
       "format": "text",
       "entries": 201
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global_Domain.list": {
-      "sha256": "4f447a4b688b138ba709b1ab1716c02f22966ac8a0f047dbe26ff870a6e05344",
+      "sha256": "b9bbd1fe800e8994a15e951e382f9bac6a66de939a6c2e4c7eff319152294201",
       "format": "text",
-      "entries": 35028
+      "entries": 35034
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list": {
       "sha256": "c6efe08ab4c0a12ddba20f5e75abfba2dd63a42b810f8cb5c303433a38e93b73",
@@ -362,9 +362,9 @@
       "entries": 69
     },
     "https://ruleset-mirror.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "25ec856af166337ea8f7bb72190db7e8d9538faffc305af5fb4d75d4c3c7a7d4",
+      "sha256": "8c8d5470235a44f8ce1cf2f10b5c25e95833d2358fb192087b556114af18b8b4",
       "format": "text",
-      "entries": 140858
+      "entries": 140954
     },
     "https://ruleset-mirror.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "110f1da29a6f37c10ea33598e5833a44192fa4aacbe3020d9b6cf882e5962a53",
