@@ -1,5 +1,5 @@
 {
-  "resource_digest": "5ab3d82bb1a2fe0c633d4b85c85040a8d50305f71de755a722733c8ca20f61d1",
+  "resource_digest": "253f05a38640dca60d8bcf98373762668de12c8061a2df8b535c9417c73c15e1",
   "resources": {
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml": {
       "sha256": "af16ff9b3d5d587f93fa1761292401c8cc716fd52e7263f8ced577b90d7507c5",
@@ -12,7 +12,7 @@
       "entries": 33
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple_Domain.yaml": {
-      "sha256": "daa8877d68659d5c9a0ccc149bb19dee274104ddc6aa574fba0ec3084110cb2c",
+      "sha256": "461e187d6201d1cdfcb78c938572e629ca36ada2d4d76f63a3bf49630158a283",
       "format": "yaml",
       "entries": 1560
     },
@@ -22,12 +22,12 @@
       "entries": 9
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml": {
-      "sha256": "a527d57b2061ea2066004b38acec4d7ea27accadc1e911b18570c6998c63f9b4",
+      "sha256": "becb572843c4a2b2d198d2e6a0705cf87a7860e3f17216e328e91f06845d1b70",
       "format": "yaml",
       "entries": 62
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml": {
-      "sha256": "64128d2858cb98134c92021892525f72dc46dd50103e4a3e275daadb523c5b54",
+      "sha256": "4e0ef9886ff098da0e601049af1407df0e3f72484361d8ca7ac6a63daf999636",
       "format": "yaml",
       "entries": 110746
     },
@@ -227,7 +227,7 @@
       "entries": 570
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Game/Game.list": {
-      "sha256": "70455f9b653c0bc2cd62745b0c52b877f7807c1b27364a72edcc07a2cbf0b405",
+      "sha256": "e99f3571e0e59461a125d2d0ca1abe53d1df4054e58704bc11272320ec6aa519",
       "format": "text",
       "entries": 597
     },
@@ -242,14 +242,14 @@
       "entries": 31
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global.list": {
-      "sha256": "4b40196fddbe4aeb726991d6c6e13d57bc4c524b949279950011df0a5e2da1ce",
+      "sha256": "fb373ef5241d420117030d219b672c846bdaf759f4e618370028d1091ff78958",
       "format": "text",
       "entries": 201
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global_Domain.list": {
-      "sha256": "b9bbd1fe800e8994a15e951e382f9bac6a66de939a6c2e4c7eff319152294201",
+      "sha256": "ec148970d506551255ce998990d2b3c842b9b413364ca2511813587be2d824e4",
       "format": "text",
-      "entries": 35034
+      "entries": 35050
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list": {
       "sha256": "c6efe08ab4c0a12ddba20f5e75abfba2dd63a42b810f8cb5c303433a38e93b73",
@@ -262,9 +262,9 @@
       "entries": 49
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list": {
-      "sha256": "e524edec216ed7f2fa2f3eb3fe09fe70121acf88408c2394d19b3e2331c54de7",
+      "sha256": "79c3b96f8064bf1b53678fb0dc7d9e92d74c729869fe8dc494afa2e9b12e2856",
       "format": "text",
-      "entries": 140
+      "entries": 142
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list": {
       "sha256": "22df1a1017ad5d41755bf020ca8eb9afeedc7bdc2c649ed2074b255227a7ed8e",
@@ -362,9 +362,9 @@
       "entries": 69
     },
     "https://ruleset-mirror.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "e0dc1e5e1f4cc80ddb5f69e249f862dd02412451c4f81ccd459e627bb02d410a",
+      "sha256": "3905cfaecbbae93dae4a61daa50180a33c5460400f60718b8e82ae28b935e35f",
       "format": "text",
-      "entries": 141008
+      "entries": 143052
     },
     "https://ruleset-mirror.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "110f1da29a6f37c10ea33598e5833a44192fa4aacbe3020d9b6cf882e5962a53",
