@@ -1,5 +1,5 @@
 {
-  "resource_digest": "60c6942930ec09e4baf5a8732f0c0b3be0a86b3cd594f220dceb420d60ddea71",
+  "resource_digest": "075c00ca60bc9f77399490a1bffb90578b7be43e25547095fcf67a9a5f59f37f",
   "resources": {
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml": {
       "sha256": "af16ff9b3d5d587f93fa1761292401c8cc716fd52e7263f8ced577b90d7507c5",
@@ -362,9 +362,9 @@
       "entries": 71
     },
     "https://ruleset-mirror.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "3233bc65dd26896f9f637392c6ee014e30693079d3ce063d784f3822884e6f7d",
+      "sha256": "9e054d255a68b12391e5c697e32459fa623e913087c30e65253cb5536645e9c8",
       "format": "text",
-      "entries": 148070
+      "entries": 149296
     },
     "https://ruleset-mirror.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "6a3fba32d5d1632763fb4e106b05754fddb2329b39b1aea9261d38f100c13ace",
