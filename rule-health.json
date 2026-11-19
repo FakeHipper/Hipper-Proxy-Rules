@@ -1,5 +1,5 @@
 {
-  "resource_digest": "b5143ffe3a2267e5222053586294d23f969f0bb01dc7a8eafc4f6065e9868a4b",
+  "resource_digest": "252a85fe3b3a624de07ae523e86216a877942917a9bad96c85550a1b5cf751db",
   "resources": {
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml": {
       "sha256": "af16ff9b3d5d587f93fa1761292401c8cc716fd52e7263f8ced577b90d7507c5",
@@ -357,14 +357,14 @@
       "entries": 7
     },
     "https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/AI.txt": {
-      "sha256": "84c41a6cd9053845c4b862856b07e6b526d52327eb25253de81e280f372c35fb",
+      "sha256": "7124d8be989026b52d5ed1b30f485f180960850b20fd68056deafd4a2f7d316d",
       "format": "text",
-      "entries": 71
+      "entries": 79
     },
     "https://ruleset-mirror.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "c170170ffaa0cccb9e6cfba082ff132abd88eebb3709a620dcb17afb0e307ae5",
+      "sha256": "c7f1ba39f5a230531e725c9f8851aa5902a61ad3055fb85ad8b2a12004d9d7b6",
       "format": "text",
-      "entries": 149544
+      "entries": 149435
     },
     "https://ruleset-mirror.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "6a3fba32d5d1632763fb4e106b05754fddb2329b39b1aea9261d38f100c13ace",
