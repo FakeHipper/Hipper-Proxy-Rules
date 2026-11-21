@@ -36,3 +36,9 @@ Shadowrocket框架参考Johnshall/Shadowrocket-ADBlock-Rules-Forever及LOWERTOP/
 使用说明：https://github.com/LOWERTOP/Shadowrocket/wiki
 
 本仓库配置和脚本按CC BY-SA 4.0共享，不提供连接、地区识别、账户安全或服务商AUP合规保证。
+
+## 安卓专用主配置
+
+Clash Mi 使用本仓库同目录的 `ClashMi.yaml`，保留 21 个策略组。原有 `Hipper.yaml` 继续供使用 24 组结构的既有配置使用。安卓端从本机导入私有节点覆写，再对专用主配置启用该覆写。核对生效配置中的 AI 组仅引用 DMIT 私有节点，保留国内普通业务直连。规则提供器按配置周期刷新，主文件由客户端检查到期更新并重新连接加载。
+
+Shadowrocket 与两个 Mihomo 框架均引用 Phishing Army 的公开域名列表及 blackmatrix7 的 STUN 列表。威胁源与服务器列表在原维护方更新。公开仓库仅记录资源摘要及条目数。客户端还需核验未知端口、IPv6、VPN 断开及网络切换。

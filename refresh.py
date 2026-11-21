@@ -141,6 +141,10 @@ def fetch(url):
         data = response.read(16 * 1024 * 1024 + 1)
     if len(data) > 16 * 1024 * 1024:
         raise ValueError('规则资源超过允许大小')
+    if url.endswith('.mrs'):
+        if len(data) < 16 or not data.startswith(bytes.fromhex('28b52ffd')):
+            raise ValueError('MRS资源缺少压缩帧')
+        return url, {'sha256': hashlib.sha256(data).hexdigest(), 'format': 'mrs', 'bytes': len(data)}
     text = data.decode('utf-8-sig')
     is_yaml = re.search(r'^payload\s*:', text, re.M) is not None
     if is_yaml:
@@ -157,11 +161,35 @@ def fetch(url):
     return url, {'sha256': hashlib.sha256(data).hexdigest(), 'format': 'yaml' if is_yaml else 'text', 'entries': len(entries)}
 
 
+def check_mobile():
+    config = yaml.safe_load((ROOT / 'ClashMi.yaml').read_text())
+    check_credentials(config)
+    if config['proxies'] or any(p != {'type': 'inline', 'payload': []} for p in config['proxy-providers'].values()):
+        raise ValueError('安卓公开框架须使用空节点提供器')
+    groups = {g['name']: g for g in config['proxy-groups']}
+    fixed = '🤖 AI 服务'
+    if len(groups) != 21 or groups[fixed] != {'name': fixed, 'type': 'select', 'use': ['DMIT私有节点'], 'empty-fallback': 'REJECT'}:
+        raise ValueError('安卓分组或AI出口不符合要求')
+    if groups['🐟 漏网之鱼'].get('proxies') != [fixed] or config['rules'][-1] != 'MATCH,🐟 漏网之鱼':
+        raise ValueError('安卓兜底须绑定AI出口')
+    guard = json.loads((ROOT / 'guard.json').read_text())
+    boundary = config['rules'].index('RULE-SET,ChinaMax,🇨🇳 中国大陆直连')
+    for host in guard['claude_suffixes'] + guard['rtc_suffixes']:
+        if 'DOMAIN-SUFFIX,' + host + ',' + fixed not in config['rules'][:boundary]:
+            raise ValueError('受保护域名缺少优先规则')
+        resolvers = config['dns']['nameserver-policy']['+.' + host]
+        if not resolvers or any(not r.endswith('#' + fixed) for r in resolvers):
+            raise ValueError('安卓受保护域名DNS未绑定')
+    return config['rule-providers']
+
+
 def main():
     urls, providers = check_public()
+    mobile = check_mobile()
+    urls.update(p['url'] for p in mobile.values())
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         resources = dict(pool.map(fetch, sorted(urls)))
-    for name, provider in providers.items():
+    for name, provider in (*providers.items(), *mobile.items()):
         if provider.get('format', 'yaml') != resources[provider['url']]['format']:
             raise ValueError('提供器格式不一致：' + name)
     digest = hashlib.sha256(json.dumps(resources, sort_keys=True).encode()).hexdigest()

@@ -1,0 +1,991 @@
+# 安卓 Clash Mi 规则框架。节点和订阅须从本机私有覆写加载；本文件不含认证材料。
+# AI、TikTok及未分类流量固定DMIT；代理失效不回退直连。系统断网保护须另行验收。
+socks-port: 23456
+allow-lan: false
+mode: rule
+log-level: warning
+external-controller: 127.0.0.1:9090
+profile:
+  store-selected: true
+  store-fake-ip: true
+ipv6: false
+unified-delay: true
+dns:
+  enable: true
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: 127.0.0.1:23453
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.example'
+  - '*.invalid'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  - '*.home.arpa'
+  - time.*.com
+  - time.*.gov
+  - time.*.apple.com
+  - time.*.edu.cn
+  - '*.ntp.org.cn'
+  - +.pool.ntp.org
+  - time1.cloud.tencent.com
+  - music.163.com
+  - '*.music.163.com'
+  - '*.126.net'
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - '*.kuwo.cn'
+  - api-resolve.tensent.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - +.y.qq.com
+  - +.music.tc.qq.com
+  - +.stream.qqmusic.qq.com
+  - localhost.ptlogin2.qq.com
+  - +.srv.nintendo.net
+  - +.stun.playstation.net
+  - xbox.*.microsoft.com
+  - xnotify.xboxlive.com
+  - +.battlenet.com.cn
+  - +.wotgame.cn
+  - +.wggames.cn
+  - +.wowsgame.cn
+  - +.wargaming.net
+  - proxy.golang.org
+  - +.msftconnecttest.com
+  - +.msftncsi.com
+  - WORKGROUP
+  - +.market.xiaomi.com
+  - +.lan
+  - +.local
+  - +.home.arpa
+  - api-resolve.tencent.com
+  - mtalk.google.com
+  - '*.mtalk.google.com'
+  nameserver:
+  - https://8.8.8.8/dns-query#🤖 AI 服务
+  - https://1.1.1.1/dns-query#🤖 AI 服务
+  proxy-server-nameserver:
+  - https://223.5.5.5/dns-query#DIRECT
+  - https://1.12.12.12/dns-query#DIRECT
+  nameserver-policy:
+    +.openai.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.chatgpt.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.oaistatic.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.oaiusercontent.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.anthropic.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.claude.ai:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.claude.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.x.ai:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.grok.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.perplexity.ai:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.pplx.ai:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.deepseek.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.mistral.ai:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.cohere.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.huggingface.co:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.google.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.googleapis.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.googlevideo.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.googleusercontent.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.gstatic.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.deepmind.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.youtube.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.github.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.githubusercontent.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.twitter.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.x.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.t.me:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.telegram.org:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.cloudflare.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.claude.app:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.claudeusercontent.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.claudemcpcontent.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.githubcopilot.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.githubcopilot.net:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.cursor.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.cursor.sh:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.cursorapi.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.windsurf.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.codeium.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.codeiumdata.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.tiktok.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.tiktokv.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.tiktokcdn.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.stun.l.google.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.stun1.l.google.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.stun2.l.google.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.stun3.l.google.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.stun4.l.google.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.stun.cloudflare.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.turn.cloudflare.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.global.stun.twilio.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    +.challenges.cloudflare.com:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    rule-set:STUN,Claude,Anthropic:
+    - https://8.8.8.8/dns-query#🤖 AI 服务
+    - https://1.1.1.1/dns-query#🤖 AI 服务
+    rule-set:ChinaMax:
+    - https://223.5.5.5/dns-query#DIRECT
+    - https://1.12.12.12/dns-query#DIRECT
+  respect-rules: true
+  prefer-h3: false
+  use-hosts: true
+  use-system-hosts: false
+  direct-nameserver:
+  - https://223.5.5.5/dns-query#DIRECT
+  - https://1.12.12.12/dns-query#DIRECT
+  direct-nameserver-follow-policy: false
+proxy-providers:
+  DMIT私有节点:
+    type: inline
+    payload: []
+  PKCloud节点:
+    type: inline
+    payload: []
+  VVCloud节点:
+    type: inline
+    payload: []
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 🚀 手动切换
+  - ♻️ 自动选择
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇯🇵 日本节点
+  - 🇹🇼 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇰🇷 韩国节点
+  - 🟣 PKHub手动
+  - 🟢 VVCloud手动
+  - DIRECT
+  use:
+  - DMIT私有节点
+  empty-fallback: REJECT
+- name: 🚀 手动切换
+  type: select
+  use:
+  - DMIT私有节点
+  - PKCloud节点
+  - VVCloud节点
+  empty-fallback: REJECT
+- name: ♻️ 自动选择
+  type: select
+  proxies:
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇯🇵 日本节点
+  - 🇰🇷 韩国节点
+  - 🇸🇬 新加坡节点
+  - 🇺🇲 美国节点
+  - 🚀 手动切换
+- name: 🤖 AI 服务
+  type: select
+  use:
+  - DMIT私有节点
+  empty-fallback: REJECT
+- name: 📱 TikTok
+  type: select
+  proxies:
+  - 🤖 AI 服务
+- name: 🌐 国际服务
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - 🚀 手动切换
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇺🇲 美国节点
+  - 🇯🇵 日本节点
+  - 🇹🇼 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇰🇷 韩国节点
+  - DIRECT
+- name: 🎬 海外流媒体
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - 🚀 手动切换
+  - ♻️ 自动选择
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇯🇵 日本节点
+  - 🇹🇼 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇰🇷 韩国节点
+  - DIRECT
+- name: 📱 海外社交
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - 🚀 手动切换
+  - ♻️ 自动选择
+  - 🇭🇰 香港节点
+  - 🇺🇲 美国节点
+  - 🇯🇵 日本节点
+  - 🇹🇼 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇰🇷 韩国节点
+  - DIRECT
+- name: 🎮 游戏平台
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - 🚀 手动切换
+  - ♻️ 自动选择
+  - 🇯🇵 日本节点
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇹🇼 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇰🇷 韩国节点
+  - DIRECT
+- name: 🐙 GitHub
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - 🚀 手动切换
+  - ♻️ 自动选择
+  - 🇺🇲 美国节点
+  - 🇭🇰 香港节点
+  - 🇯🇵 日本节点
+  - 🇹🇼 台湾节点
+  - 🇸🇬 新加坡节点
+  - 🇰🇷 韩国节点
+  - DIRECT
+- name: 🇨🇳 中国大陆直连
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+- name: 🛑 广告拦截
+  type: select
+  proxies:
+  - REJECT
+  - 🤖 AI 服务
+- name: 🐟 漏网之鱼
+  type: select
+  proxies:
+  - 🤖 AI 服务
+- name: 🇭🇰 香港节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  use:
+  - PKCloud节点
+  - VVCloud节点
+  filter: (?i)(香港|HK|Hong.?Kong)
+  empty-fallback: REJECT
+- name: 🇯🇵 日本节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  use:
+  - PKCloud节点
+  - VVCloud节点
+  filter: (?i)(日本|JP|Japan)
+  empty-fallback: REJECT
+- name: 🇹🇼 台湾节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  use:
+  - PKCloud节点
+  - VVCloud节点
+  filter: (?i)(台湾|TW|Taiwan)
+  empty-fallback: REJECT
+- name: 🇸🇬 新加坡节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  use:
+  - PKCloud节点
+  - VVCloud节点
+  filter: (?i)(新加坡|SG|Singapore)
+  empty-fallback: REJECT
+- name: 🇰🇷 韩国节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  use:
+  - PKCloud节点
+  - VVCloud节点
+  filter: (?i)(韩国|KR|Korea)
+  empty-fallback: REJECT
+- name: 🇺🇲 美国节点
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 150
+  use:
+  - DMIT私有节点
+  - PKCloud节点
+  - VVCloud节点
+  filter: (?i)(美国|US|United.?States|^DMIT-LAX-)
+  empty-fallback: REJECT
+- name: 🟣 PKHub手动
+  type: select
+  use:
+  - PKCloud节点
+  empty-fallback: REJECT
+- name: 🟢 VVCloud手动
+  type: select
+  use:
+  - VVCloud节点
+  empty-fallback: REJECT
+rule-providers:
+  RejectDomainset:
+    type: http
+    behavior: domain
+    url: https://ruleset.skk.moe/Clash/domainset/reject.txt
+    path: ./ruleset/sukka_reject_domainset.txt
+    interval: 43200
+    format: text
+    proxy: 🤖 AI 服务
+  RejectNonIP:
+    type: http
+    behavior: classical
+    url: https://ruleset.skk.moe/Clash/non_ip/reject.txt
+    path: ./ruleset/sukka_reject_nonip.txt
+    interval: 43200
+    format: text
+    proxy: 🤖 AI 服务
+  OpenAI:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./ruleset/openai.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Claude:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
+    path: ./ruleset/claude.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Anthropic:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml
+    path: ./ruleset/anthropic.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Gemini:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
+    path: ./ruleset/gemini.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Bing:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bing/Bing.yaml
+    path: ./ruleset/bing.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Copilot:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
+    path: ./ruleset/copilot.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
+    path: ./ruleset/apple.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    path: ./ruleset/microsoft.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Google:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+    path: ./ruleset/google.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    path: ./ruleset/youtube.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    path: ./ruleset/netflix.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Disney:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    path: ./ruleset/disney.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Spotify:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+    path: ./ruleset/spotify.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  TikTok:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    path: ./ruleset/tiktok.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    path: ./ruleset/telegram.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Twitter:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
+    path: ./ruleset/twitter.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Facebook:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
+    path: ./ruleset/facebook.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Instagram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
+    path: ./ruleset/instagram.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  PayPal:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml
+    path: ./ruleset/paypal.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Steam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+    path: ./ruleset/steam.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Epic:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.yaml
+    path: ./ruleset/epic.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Nintendo:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml
+    path: ./ruleset/nintendo.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  PlayStation:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PlayStation/PlayStation.yaml
+    path: ./ruleset/playstation.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  EA:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.yaml
+    path: ./ruleset/ea.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  Blizzard:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.yaml
+    path: ./ruleset/blizzard.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  GitHub:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    path: ./ruleset/github.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  ChinaMax:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml
+    path: ./ruleset/chinamax_domain.yaml
+    interval: 86400
+    format: yaml
+    proxy: 🤖 AI 服务
+  ChinaMaxIP:
+    type: http
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+    path: ./ruleset/china_ip.mrs
+    interval: 86400
+    format: mrs
+    proxy: 🤖 AI 服务
+  AppleProxy:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleProxy/AppleProxy.yaml
+    path: ./ruleset/appleproxy.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  GoogleFCM:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleFCM/GoogleFCM.yaml
+    path: ./ruleset/googlefcm.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  Amazon:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml
+    path: ./ruleset/amazon.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  eBay:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/eBay/eBay.yaml
+    path: ./ruleset/ebay.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  Discord:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
+    path: ./ruleset/discord.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  Reddit:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Reddit/Reddit.yaml
+    path: ./ruleset/reddit.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  Notion:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Notion/Notion.yaml
+    path: ./ruleset/notion.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  OneDrive:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+    path: ./ruleset/onedrive.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  STUN:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/STUN/STUN.yaml
+    path: ./ruleset/stun.yaml
+    interval: 86400
+    proxy: 🤖 AI 服务
+  PhishingArmy:
+    type: http
+    behavior: domain
+    format: text
+    url: https://phishing.army/download/phishing_army_blocklist.txt
+    path: ./ruleset/phishing-army.txt
+    interval: 86400
+    proxy: 🤖 AI 服务
+rules:
+- AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+- DOMAIN-SUFFIX,claude.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,claude.com,🤖 AI 服务
+- DOMAIN-SUFFIX,anthropic.com,🤖 AI 服务
+- DOMAIN-SUFFIX,claude.app,🤖 AI 服务
+- DOMAIN-SUFFIX,claudeusercontent.com,🤖 AI 服务
+- DOMAIN-SUFFIX,claudemcpcontent.com,🤖 AI 服务
+- RULE-SET,PhishingArmy,REJECT
+- RULE-SET,STUN,🤖 AI 服务,no-resolve
+- DOMAIN-SUFFIX,stun.l.google.com,🤖 AI 服务
+- DOMAIN-SUFFIX,stun1.l.google.com,🤖 AI 服务
+- DOMAIN-SUFFIX,stun2.l.google.com,🤖 AI 服务
+- DOMAIN-SUFFIX,stun3.l.google.com,🤖 AI 服务
+- DOMAIN-SUFFIX,stun4.l.google.com,🤖 AI 服务
+- DOMAIN-SUFFIX,stun.cloudflare.com,🤖 AI 服务
+- DOMAIN-SUFFIX,turn.cloudflare.com,🤖 AI 服务
+- DOMAIN-SUFFIX,global.stun.twilio.com,🤖 AI 服务
+- DST-PORT,3478,🤖 AI 服务
+- DST-PORT,5349,🤖 AI 服务
+- DST-PORT,19302,🤖 AI 服务
+- DST-PORT,19303,🤖 AI 服务
+- DOMAIN-SUFFIX,openai.com,🤖 AI 服务
+- DOMAIN-SUFFIX,chatgpt.com,🤖 AI 服务
+- DOMAIN-SUFFIX,oaistatic.com,🤖 AI 服务
+- DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI 服务
+- DOMAIN,gemini.google.com,🤖 AI 服务
+- DOMAIN,notebooklm.google.com,🤖 AI 服务
+- DOMAIN,aistudio.google.com,🤖 AI 服务
+- DOMAIN,makersuite.google.com,🤖 AI 服务
+- DOMAIN,ai.google.dev,🤖 AI 服务
+- DOMAIN,generativelanguage.googleapis.com,🤖 AI 服务
+- DOMAIN,vertexai.googleapis.com,🤖 AI 服务
+- DOMAIN,aiplatform.googleapis.com,🤖 AI 服务
+- DOMAIN-SUFFIX,labs.google,🤖 AI 服务
+- DOMAIN-SUFFIX,deepmind.com,🤖 AI 服务
+- DOMAIN-SUFFIX,githubcopilot.com,🤖 AI 服务
+- DOMAIN-SUFFIX,githubcopilot.net,🤖 AI 服务
+- DOMAIN-SUFFIX,copilot.microsoft.com,🤖 AI 服务
+- DOMAIN,copilot-proxy.githubusercontent.com,🤖 AI 服务
+- DOMAIN,copilot-telemetry.githubusercontent.com,🤖 AI 服务
+- DOMAIN,challenges.cloudflare.com,🤖 AI 服务
+- DOMAIN-SUFFIX,cursor.com,🤖 AI 服务
+- DOMAIN-SUFFIX,cursor.sh,🤖 AI 服务
+- DOMAIN-SUFFIX,cursorapi.com,🤖 AI 服务
+- DOMAIN-SUFFIX,windsurf.com,🤖 AI 服务
+- DOMAIN-SUFFIX,codeium.com,🤖 AI 服务
+- DOMAIN-SUFFIX,codeiumdata.com,🤖 AI 服务
+- DOMAIN-SUFFIX,x.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,grok.com,🤖 AI 服务
+- DOMAIN-SUFFIX,perplexity.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,pplx.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,mistral.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,cohere.com,🤖 AI 服务
+- DOMAIN-SUFFIX,deepseek.com,🤖 AI 服务
+- DOMAIN-SUFFIX,huggingface.co,🤖 AI 服务
+- DOMAIN-SUFFIX,hf.co,🤖 AI 服务
+- DOMAIN-SUFFIX,replicate.com,🤖 AI 服务
+- DOMAIN-SUFFIX,stability.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,midjourney.com,🤖 AI 服务
+- DOMAIN-SUFFIX,ipinfo.io,🤖 AI 服务
+- DOMAIN-SUFFIX,ipinfo.cv,🤖 AI 服务
+- DOMAIN-SUFFIX,ip-api.com,🤖 AI 服务
+- DOMAIN-SUFFIX,ipify.org,🤖 AI 服务
+- DOMAIN-SUFFIX,myip.com,🤖 AI 服务
+- DOMAIN-SUFFIX,whatismyip.com,🤖 AI 服务
+- DOMAIN-SUFFIX,ifconfig.me,🤖 AI 服务
+- DOMAIN-SUFFIX,icanhazip.com,🤖 AI 服务
+- DOMAIN-SUFFIX,browserleaks.com,🤖 AI 服务
+- DOMAIN-SUFFIX,ipleak.net,🤖 AI 服务
+- DOMAIN-SUFFIX,dnsleaktest.com,🤖 AI 服务
+- DOMAIN-SUFFIX,localhost,DIRECT
+- DOMAIN-SUFFIX,lan,DIRECT
+- DOMAIN-SUFFIX,local,DIRECT
+- DOMAIN-SUFFIX,home.arpa,DIRECT
+- IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+- IP-CIDR,255.255.255.255/32,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- IP-CIDR6,fe80::/10,DIRECT,no-resolve
+- IP-CIDR6,ff00::/8,DIRECT,no-resolve
+- RULE-SET,RejectDomainset,🛑 广告拦截
+- RULE-SET,RejectNonIP,🛑 广告拦截
+- RULE-SET,OpenAI,🤖 AI 服务,no-resolve
+- RULE-SET,Claude,🤖 AI 服务,no-resolve
+- RULE-SET,Anthropic,🤖 AI 服务,no-resolve
+- RULE-SET,Gemini,🤖 AI 服务,no-resolve
+- RULE-SET,Bing,🤖 AI 服务,no-resolve
+- RULE-SET,Copilot,🤖 AI 服务,no-resolve
+- RULE-SET,TikTok,📱 TikTok
+- DOMAIN-SUFFIX,musical.ly,📱 TikTok
+- DOMAIN-SUFFIX,tiktokcdn.com,📱 TikTok
+- DOMAIN-SUFFIX,tiktokv.com,📱 TikTok
+- DOMAIN-SUFFIX,tiktokcdn-us.com,📱 TikTok
+- DOMAIN-SUFFIX,byteoversea.com,📱 TikTok
+- DOMAIN-SUFFIX,ibytedtos.com,📱 TikTok
+- DOMAIN-SUFFIX,muscdn.com,📱 TikTok
+- RULE-SET,GoogleFCM,🌐 国际服务,no-resolve
+- RULE-SET,YouTube,🎬 海外流媒体
+- DOMAIN-SUFFIX,youtube.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,youtu.be,🎬 海外流媒体
+- DOMAIN-SUFFIX,youtube-nocookie.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,googlevideo.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,ytimg.com,🎬 海外流媒体
+- RULE-SET,Netflix,🎬 海外流媒体
+- RULE-SET,Disney,🎬 海外流媒体
+- RULE-SET,Spotify,🎬 海外流媒体
+- RULE-SET,Telegram,📱 海外社交,no-resolve
+- RULE-SET,Twitter,📱 海外社交,no-resolve
+- RULE-SET,Facebook,📱 海外社交,no-resolve
+- RULE-SET,Instagram,📱 海外社交,no-resolve
+- RULE-SET,Discord,📱 海外社交,no-resolve
+- RULE-SET,Reddit,📱 海外社交,no-resolve
+- RULE-SET,PayPal,📱 海外社交
+- DOMAIN-SUFFIX,paypal.com,📱 海外社交
+- DOMAIN-SUFFIX,paypalobjects.com,📱 海外社交
+- DOMAIN-SUFFIX,stripe.com,📱 海外社交
+- DOMAIN-SUFFIX,stripe.network,📱 海外社交
+- RULE-SET,Amazon,🌐 国际服务
+- RULE-SET,eBay,🌐 国际服务
+- RULE-SET,Notion,🌐 国际服务
+- RULE-SET,OneDrive,🌐 国际服务
+- RULE-SET,AppleProxy,🌐 国际服务
+- RULE-SET,Apple,🌐 国际服务
+- RULE-SET,Microsoft,🌐 国际服务
+- RULE-SET,GitHub,🐙 GitHub
+- RULE-SET,Google,🌐 国际服务,no-resolve
+- RULE-SET,Steam,🎮 游戏平台,no-resolve
+- RULE-SET,Epic,🎮 游戏平台,no-resolve
+- RULE-SET,Nintendo,🎮 游戏平台,no-resolve
+- RULE-SET,PlayStation,🎮 游戏平台,no-resolve
+- RULE-SET,EA,🎮 游戏平台,no-resolve
+- RULE-SET,Blizzard,🎮 游戏平台,no-resolve
+- DOMAIN,grok.x.ai,🤖 AI 服务
+- DOMAIN-SUFFIX,hbo.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,hbomax.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,max.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,wbd.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,hulu.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,hulustream.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,peacocktv.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,paramountplus.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,crunchyroll.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,funimation.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,abema.tv,🎬 海外流媒体
+- DOMAIN-SUFFIX,dazn.com,🎬 海外流媒体
+- DOMAIN-SUFFIX,twitch.tv,🎬 海外流媒体
+- DOMAIN-SUFFIX,twitchsvc.net,🎬 海外流媒体
+- DOMAIN-SUFFIX,x.com,📱 海外社交
+- DOMAIN-SUFFIX,twimg.com,📱 海外社交
+- DOMAIN-SUFFIX,t.me,📱 海外社交
+- DOMAIN-SUFFIX,threads.net,📱 海外社交
+- DOMAIN-SUFFIX,whatsapp.com,📱 海外社交
+- DOMAIN-SUFFIX,whatsapp.net,📱 海外社交
+- DOMAIN-SUFFIX,snapchat.com,📱 海外社交
+- DOMAIN-SUFFIX,pinterest.com,📱 海外社交
+- DOMAIN-SUFFIX,reddit.com,📱 海外社交
+- DOMAIN-SUFFIX,redd.it,📱 海外社交
+- DOMAIN-SUFFIX,discord.com,📱 海外社交
+- DOMAIN-SUFFIX,discordapp.com,📱 海外社交
+- DOMAIN-SUFFIX,discordapp.net,📱 海外社交
+- DOMAIN-SUFFIX,linkedin.com,📱 海外社交
+- DOMAIN-SUFFIX,licdn.com,📱 海外社交
+- DOMAIN-SUFFIX,riotgames.com,🎮 游戏平台
+- DOMAIN-SUFFIX,leagueoflegends.com,🎮 游戏平台
+- DOMAIN-SUFFIX,valorant.com,🎮 游戏平台
+- DOMAIN-SUFFIX,2mdn.net,🎮 游戏平台
+- DOMAIN-SUFFIX,ubisoft.com,🎮 游戏平台
+- DOMAIN-SUFFIX,rockstargames.com,🎮 游戏平台
+- RULE-SET,ChinaMax,🇨🇳 中国大陆直连
+- RULE-SET,ChinaMaxIP,🇨🇳 中国大陆直连,no-resolve
+- MATCH,🐟 漏网之鱼
+mixed-port: 3333
+bind-address: 127.0.0.1
+tcp-concurrent: true
+find-process-mode: 'off'
+tun:
+  enable: true
+  stack: gvisor
+  mtu: 1280
+  auto-route: false
+  auto-detect-interface: false
+  dns-hijack:
+  - any:53
+  - tcp://any:53
+  inet4-address:
+  - 172.19.0.1/30
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+    QUIC:
+      ports:
+      - 443
+      - 8443
+  skip-domain:
+  - +.lan
+  - +.local
+  - +.home.arpa
+proxies: []
