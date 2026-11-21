@@ -1,10 +1,10 @@
 {
-  "resource_digest": "7baf0ff77c17d696868261d6c22e9d72d944b46479d42270ff0b47c736ac1c89",
+  "resource_digest": "16e1744f6b84cee460b4ec81abe5bb82cc2d4c6ec8e187fd00f3676bcb8aa3e4",
   "resources": {
     "https://phishing.army/download/phishing_army_blocklist.txt": {
-      "sha256": "dca813838585fdb8769ba105d3b9c58eb9a04a121fc268ca97a9c7a05f8267b0",
+      "sha256": "d9390432a5440e93e8163f597e6e57011a3c46ad8904ebe9f00af8044b25c8f1",
       "format": "text",
-      "entries": 146655
+      "entries": 146588
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs": {
       "sha256": "895fd8e055ce9b26c297571c5244c2a314a1e2184122bd3b83276be75e0befb1",
