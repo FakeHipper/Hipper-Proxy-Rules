@@ -1,0 +1,6 @@
+{
+  "claude_suffixes": ["claude.ai", "claude.com", "anthropic.com", "claude.app", "claudeusercontent.com", "claudemcpcontent.com"],
+  "rtc_suffixes": ["stun.l.google.com", "stun1.l.google.com", "stun2.l.google.com", "stun3.l.google.com", "stun4.l.google.com", "stun.cloudflare.com", "turn.cloudflare.com", "global.stun.twilio.com"],
+  "rtc_ports": [3478, 5349, 19302, 19303],
+  "phishing_domains": "https://phishing.army/download/phishing_army_blocklist.txt"
+}
