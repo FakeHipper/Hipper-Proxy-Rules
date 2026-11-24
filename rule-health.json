@@ -1,10 +1,10 @@
 {
-  "resource_digest": "510442dd50be65dbea0859beaaf225360ceb8bc9b1bd409cbfef7ae890bbb97e",
+  "resource_digest": "a38fe5d1246de747000a2e0ffb784c73acd45b583b010dc822cf9c3968d8aaa5",
   "resources": {
     "https://phishing.army/download/phishing_army_blocklist.txt": {
-      "sha256": "fb64e3b656d13116b3d1fc9cc22ceeb22009b1e22a7cfd2b727ebed960bcd789",
+      "sha256": "120cc6e870bba45ea76a829e936e9896959a73d6e80465424a996e0c116353d2",
       "format": "text",
-      "entries": 146087
+      "entries": 145976
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs": {
       "sha256": "895fd8e055ce9b26c297571c5244c2a314a1e2184122bd3b83276be75e0befb1",
@@ -422,9 +422,9 @@
       "entries": 80
     },
     "https://ruleset-mirror.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "572c765e3a2f9d3ae6a54fe2c8abf071bf704f3e40f88b90ed854f5f53413ea7",
+      "sha256": "7bdebcac8a13087e88ba805a535dc87a73b371195a74e15ea562a8477004d9ba",
       "format": "text",
-      "entries": 148602
+      "entries": 151718
     },
     "https://ruleset-mirror.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "6a3fba32d5d1632763fb4e106b05754fddb2329b39b1aea9261d38f100c13ace",
@@ -432,9 +432,9 @@
       "entries": 371
     },
     "https://ruleset.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "572c765e3a2f9d3ae6a54fe2c8abf071bf704f3e40f88b90ed854f5f53413ea7",
+      "sha256": "7bdebcac8a13087e88ba805a535dc87a73b371195a74e15ea562a8477004d9ba",
       "format": "text",
-      "entries": 148602
+      "entries": 151718
     },
     "https://ruleset.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "6a3fba32d5d1632763fb4e106b05754fddb2329b39b1aea9261d38f100c13ace",
