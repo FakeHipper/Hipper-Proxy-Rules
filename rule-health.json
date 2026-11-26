@@ -1,15 +1,15 @@
 {
-  "resource_digest": "93bfaaab67b47cd3fa5ac014371805870959f69f7565820c5c623044475dfa0f",
+  "resource_digest": "094afa49ccf53fcfcff40c7c6aae0bd54b022bd02ec13ef1040bdf867ee32d30",
   "resources": {
     "https://phishing.army/download/phishing_army_blocklist.txt": {
-      "sha256": "4d40592e5e89afcec417be2b3573fdef08e8c1d276ccf346c057b844c999a55d",
+      "sha256": "ce4e2005109439154190dcbe6adea820883d8147944b7936c660b519de321364",
       "format": "text",
-      "entries": 146516
+      "entries": 146530
     },
     "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs": {
-      "sha256": "895fd8e055ce9b26c297571c5244c2a314a1e2184122bd3b83276be75e0befb1",
+      "sha256": "16c329b9450dad35130b153aa126bcedd2359abd2f686454f4e154cf61a61778",
       "format": "mrs",
-      "bytes": 37527
+      "bytes": 38081
     },
     "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Amazon/Amazon.yaml": {
       "sha256": "b027faaea79923ba80ec1f7828aecb99f647774e1e1676fd74d6d05c8e4b6853",
@@ -422,9 +422,9 @@
       "entries": 80
     },
     "https://ruleset-mirror.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "a2803223d7b4d67dd19b4699e2b72413517157a7def856878e6fe5c4da60a96b",
+      "sha256": "f2b73e29843f6bc345b323490c7d062a1c7e33477f9804a2b3eb2ba83148e3ef",
       "format": "text",
-      "entries": 152067
+      "entries": 151960
     },
     "https://ruleset-mirror.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "6a3fba32d5d1632763fb4e106b05754fddb2329b39b1aea9261d38f100c13ace",
@@ -432,9 +432,9 @@
       "entries": 371
     },
     "https://ruleset.skk.moe/Clash/domainset/reject.txt": {
-      "sha256": "a2803223d7b4d67dd19b4699e2b72413517157a7def856878e6fe5c4da60a96b",
+      "sha256": "f2b73e29843f6bc345b323490c7d062a1c7e33477f9804a2b3eb2ba83148e3ef",
       "format": "text",
-      "entries": 152067
+      "entries": 151960
     },
     "https://ruleset.skk.moe/Clash/non_ip/reject.txt": {
       "sha256": "6a3fba32d5d1632763fb4e106b05754fddb2329b39b1aea9261d38f100c13ace",
